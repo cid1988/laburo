@@ -65,6 +65,8 @@ export default function RootLayout() {
         <Stack.Screen name="client-dashboard" options={{ headerShown: false }} />
         <Stack.Screen name="profesional/primer-ingreso/seller" options={{ headerShown: false }} />
 
+        <Stack.Screen name="(cliente)" options={{ headerShown: false }} />
+        <Stack.Screen name="professional-dashboard" options={{ headerShown: false }} />
         {/* Si tienes un grupo de rutas para la app principal (ej. tus pestañas),
             lo defines así, y su propio _layout.tsx dentro de (app) manejará sus tabs. */}
         {/* <Stack.Screen name="(app)" options={{ headerShown: false }} /> */}

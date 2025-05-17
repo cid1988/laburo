@@ -7,7 +7,8 @@ export default function Page() {
   const [name, setName] = useState('');
   const [address, setAddress] = useState('');
   const [phone, setPhone] = useState('');
-
+  const router = useRouter();
+  
   // No necesitamos useRouter si no hay navegación desde esta pantalla por ahora,
   // pero lo dejamos como recordatorio si se agregara un botón de "volver" o "finalizar" que navegue.
   // const router = useRouter(); 
@@ -16,13 +17,21 @@ export default function Page() {
     // Aquí puedes agregar validaciones más robustas si lo necesitas.
     if (!name || !address || !phone) {
       Alert.alert('Error', 'Por favor, completa todos los campos.');
+
       return;
     }
 
+    router.replace('/(cliente)/home');
+    
     Alert.alert(
       'Datos de Comprador Guardados',
       `Nombre: ${name}\nDirección: ${address}\nTeléfono: ${phone}`,
-      [{ text: 'OK' }]
+      [{
+        text: 'OK',
+        onPress: () => {
+          router.replace('/(cliente)/home');
+        },
+      }]
     );
     // En una app real, enviarías estos datos a un backend:
     // console.log({ name, address, phone });
